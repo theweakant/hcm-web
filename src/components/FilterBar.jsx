@@ -1,12 +1,21 @@
 import { useState } from 'react';
-import { Search, Filter, X, ChevronDown } from 'lucide-react';
+import { Search, X } from 'lucide-react';
 import Input from './ui/Input';
 import Button from './ui/Button';
 import Badge from './ui/Badge';
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 const FilterBar = ({ 
   onSearch, 
-  onCategoryFilter, 
+  onCategoryFilter,   
   onSeverityFilter, 
   categories = [], 
   severityLevels = [],
@@ -15,7 +24,6 @@ const FilterBar = ({
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('Tất cả');
   const [selectedSeverity, setSelectedSeverity] = useState('Tất cả');
-  const [showFilters, setShowFilters] = useState(false);
 
   const handleSearch = (value) => {
     setSearchTerm(value);
@@ -44,9 +52,9 @@ const FilterBar = ({
   const hasActiveFilters = searchTerm || selectedCategory !== 'Tất cả' || selectedSeverity !== 'Tất cả';
 
   return (
-    <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6 mb-8">
-      {/* Search Bar */}
-      <div className="flex flex-col sm:flex-row gap-4 mb-6">
+    <div className="bg-white rounded-lg shadow-sm border border-gray-100 p-4 mb-6 transition-all duration-200">
+      <div className="flex flex-col lg:flex-row gap-3">
+        {/* Search Bar */}
         <div className="flex-1">
           <Input
             type="text"
@@ -57,75 +65,57 @@ const FilterBar = ({
             className="w-full"
           />
         </div>
-        
-        <Button
-          variant="outline"
-          onClick={() => setShowFilters(!showFilters)}
-          className="flex items-center space-x-2"
-        >
-          <Filter className="h-4 w-4" />
-          <span>Bộ lọc</span>
-          <ChevronDown className={`h-4 w-4 transition-transform duration-200 ${showFilters ? 'rotate-180' : ''}`} />
-        </Button>
-      </div>
 
-      {/* Filters */}
-      {showFilters && (
-        <div className="border-t border-gray-200 pt-6">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            {/* Category Filter */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-3">
-                Danh mục
-              </label>
-              <select
-                value={selectedCategory}
-                onChange={(e) => handleCategoryChange(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200 bg-white"
-              >
+        {/* Category Filter */}
+        <div className="w-full lg:w-64">
+          <Select value={selectedCategory} onValueChange={handleCategoryChange}>
+            <SelectTrigger className="w-full h-10">
+              <SelectValue placeholder="Chọn danh mục" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Danh mục</SelectLabel>
                 {categories.map((category) => (
-                  <option key={category} value={category}>
+                  <SelectItem key={category} value={category}>
                     {category}
-                  </option>
+                  </SelectItem>
                 ))}
-              </select>
-            </div>
-
-            {/* Severity Filter */}
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-3">
-                Mức độ nghiêm trọng
-              </label>
-              <select
-                value={selectedSeverity}
-                onChange={(e) => handleSeverityChange(e.target.value)}
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-red-500 focus:border-transparent transition-colors duration-200 bg-white"
-              >
-                {severityLevels.map((severity) => (
-                  <option key={severity} value={severity}>
-                    {severity}
-                  </option>
-                ))}
-              </select>
-            </div>
-          </div>
-
-          {/* Clear Filters */}
-          {hasActiveFilters && (
-            <div className="flex justify-end">
-              <Button
-                variant="ghost"
-                size="sm"
-                onClick={clearFilters}
-                className="flex items-center space-x-2 text-gray-600 hover:text-gray-800"
-              >
-                <X className="h-4 w-4" />
-                <span>Xóa bộ lọc</span>
-              </Button>
-            </div>
-          )}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
-      )}
+
+        {/* Severity Filter */}
+        <div className="w-full lg:w-64">
+          <Select value={selectedSeverity} onValueChange={handleSeverityChange}>
+            <SelectTrigger className="w-full h-10">
+              <SelectValue placeholder="Chọn mức độ" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Mức độ nghiêm trọng</SelectLabel>
+                {severityLevels.map((severity) => (
+                  <SelectItem key={severity} value={severity}>
+                    {severity}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
+
+        {/* Clear Filters Button */}
+        {hasActiveFilters && (
+          <Button
+            variant="outline"
+            onClick={clearFilters}
+            className="flex items-center space-x-2 h-10 text-sm font-medium text-gray-600 hover:text-gray-900"
+          >
+            <X className="h-4 w-4" />
+            <span>Xóa bộ lọc</span>
+          </Button>
+        )}
+      </div>
 
       {/* Active Filters Display */}
       {hasActiveFilters && (

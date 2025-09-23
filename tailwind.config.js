@@ -6,6 +6,35 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['Merriweather', 'serif'],
+        serif: ['Merriweather', 'Georgia', 'serif'],
+      },
+      typography: {
+        DEFAULT: {
+          css: {
+            maxWidth: '65ch',
+            color: 'rgb(55 65 81)',
+            lineHeight: '1.75',
+            'h1, h2, h3, h4': {
+              fontWeight: '700',
+              color: 'rgb(17 24 39)',
+            },
+            p: {
+              marginTop: '1.5em',
+              marginBottom: '1.5em',
+            },
+            'ul, ol': {
+              marginTop: '1.25em',
+              marginBottom: '1.25em',
+            },
+            li: {
+              marginTop: '0.5em',
+              marginBottom: '0.5em',
+            },
+          },
+        },
+      },
       colors: {
         primary: {
           50: '#fef2f2',

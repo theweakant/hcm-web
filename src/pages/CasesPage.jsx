@@ -72,12 +72,12 @@ const CasesPage = () => {
         {filteredCases.length > 0 ? (
           <>
             <ScrollRevealSection direction="up" delay={0.2}>
-              <div className="flex items-center justify-between mb-12">
-                <h2 className="text-3xl font-bold text-gray-900">
+              <div className="mb-12">
+                <h2 className="text-xl font-bold text-gray-900">
                   Kết quả tìm kiếm ({filteredCases.length} vụ án)
                 </h2>
-                <div className="flex items-center space-x-2 text-sm text-gray-500">
-                  <AlertTriangle className="h-5 w-5" />
+                <div className="flex items-center mt-2 text-sm text-gray-500">
+                  <AlertTriangle className="h-4 w-4 mr-1" />
                   <span>Thông tin được cập nhật thường xuyên</span>
                 </div>
               </div>

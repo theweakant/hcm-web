@@ -64,19 +64,11 @@ const CaseDetailPage = () => {
       <div className="bg-white shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <ScrollRevealSection direction="up" delay={0.2}>
-            <div className="flex items-center space-x-4 mb-6">
-              <Link
-                to="/cases"
-                className="flex items-center space-x-2 text-gray-600 hover:text-red-600 transition-colors duration-200"
-              >
-                <ArrowLeft className="h-4 w-4" />
-                <span>Quay lại danh sách</span>
-              </Link>
-            </div>
+
             
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between">
               <div className="flex-1">
-                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4 mt-20">
                   {caseData.title}
                 </h1>
                 <div className="flex flex-wrap items-center gap-4 mb-6">

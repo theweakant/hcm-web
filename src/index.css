@@ -4,6 +4,44 @@
 
 /* Custom styles for the anti-corruption website */
 
+@layer base {
+  html {
+    font-family: "Merriweather", serif;
+  }
+
+  /* Base typography styles */
+  h1 {
+    @apply text-4xl md:text-5xl font-bold tracking-tight leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-bold tracking-tight leading-tight;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-bold tracking-tight leading-tight;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-relaxed tracking-normal;
+  }
+
+  /* Adjust button text for better readability with Merriweather */
+  button,
+  .button {
+    @apply tracking-wide font-normal;
+  }
+
+  /* Improve readability for navigation items */
+  nav {
+    @apply tracking-wide;
+  }
+}
+
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;

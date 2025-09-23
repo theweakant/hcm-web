@@ -94,3 +94,4 @@ const CardFooter = forwardRef(({ children, className = '', ...props }, ref) => (
 CardFooter.displayName = 'CardFooter';
 
 export { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter };
+

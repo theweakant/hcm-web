@@ -33,8 +33,8 @@ const Footer = () => {
               <span className="text-xl font-bold">Chống Tham Nhũng</span>
             </div>
             <p className="text-gray-300 text-sm mb-4">
-              Trang web giáo dục về phòng, chống tham nhũng tại Việt Nam. 
-              Cung cấp thông tin, tài liệu và các vụ án tham nhũng để nâng cao nhận thức cộng đồng.
+              Website sáng tạo môn Tư tưởng Hồ Chí Minh, cung cấp kiến thức và tình huống 
+              về phòng, chống tham nhũng nhằm nâng cao nhận thức và củng cố niềm tin vào pháp luật.
             </p>
             <div className="flex space-x-4">
               <div className="flex items-center space-x-2 text-sm text-gray-300">

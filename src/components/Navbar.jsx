@@ -21,7 +21,7 @@ const Navbar = () => {
     { name: 'Trang chủ', path: '/' },
     { name: 'Vụ án', path: '/cases' },
     { name: 'Tài liệu', path: '/resources' },
-    { name: 'Giới thiệu', path: '/about' }
+    // { name: 'Giới thiệu', path: '/about' }
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -39,7 +39,7 @@ const Navbar = () => {
           {/* Logo */}
           <Link 
             to="/" 
-            className="flex items-center space-x-2 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded-lg p-1"
+            className="flex items-center space-x-2 focus:outline-none focus:ring-1 focus:ring-red-300 focus:ring-offset-1 rounded-lg p-1"
             aria-label="Chống Tham Nhũng - Trang chủ"
           >
             <Shield className="h-8 w-8 text-red-600" aria-hidden="true" />
@@ -54,7 +54,7 @@ const Navbar = () => {
               <Link
                 key={item.name}
                 to={item.path}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-red-300 focus:ring-offset-1 ${
                   isActive(item.path)
                     ? 'text-red-600 bg-red-50 shadow-sm'
                     : 'text-gray-700 hover:text-red-600 hover:bg-red-50'
@@ -70,7 +70,7 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-2 text-gray-700 hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 rounded-lg transition-colors duration-200"
+              className="p-2 text-gray-700 hover:text-red-600 focus:outline-none focus:ring-1 focus:ring-red-300 focus:ring-offset-1 rounded-lg transition-colors duration-200"
               aria-expanded={isOpen}
               aria-controls="mobile-menu"
               aria-label="Toggle navigation menu"
@@ -93,7 +93,7 @@ const Navbar = () => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 ${
+                  className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 focus:outline-none focus:ring-1 focus:ring-red-300 focus:ring-offset-1 ${
                     isActive(item.path)
                       ? 'text-red-600 bg-red-50'
                       : 'text-gray-700 hover:text-red-600 hover:bg-red-50'

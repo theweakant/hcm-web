@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '../components/ui/Card';
 import Button from '../components/ui/Button';
 import Container from '../components/ui/Container';
+import CaseCarousel from '../components/CaseCarousel';
+import { corruptionCases } from '../data/corruptionCases';
 
 const LandingPage = () => {
   const features = [
@@ -192,7 +194,10 @@ const LandingPage = () => {
           <ScrollRevealSection direction="up" delay={0.2}>
             <div className="text-center mb-20">
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-                Củng cố niềm tin của nhân dân vào chế độ và pháp luật
+                Các vụ án tham nhũng điển hình
+                <div className="mt-8">
+                  <CaseCarousel cases={corruptionCases} />
+                </div>
               </h2>
               <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
                 Công tác phòng, chống tham nhũng có ý nghĩa vô cùng quan trọng đối với sự tồn vong của chế độ 
