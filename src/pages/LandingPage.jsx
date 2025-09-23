@@ -32,10 +32,10 @@ const LandingPage = () => {
   ];
 
   const stats = [
-    { number: "500+", label: "Vụ án được theo dõi" },
-    { number: "50+", label: "Tài liệu tham khảo" },
-    { number: "10K+", label: "Người dùng truy cập" },
-    { number: "95%", label: "Độ chính xác thông tin" }
+    { number: "20+", label: "Vụ án được theo dõi" },
+    { number: "10+", label: "Tài liệu tham khảo" },
+    { number: "20+", label: "Người dùng truy cập" },
+    { number: "100%", label: "Độ chính xác thông tin" }
   ];
 
   const hoChiMinhQuotes = [
@@ -232,7 +232,7 @@ const LandingPage = () => {
                   xử lý nghiêm những "con sâu mọt" đục khoét của công, lòng tin của họ vào chế độ 
                   và tương lai của đất nước sẽ ngày càng được củng cố và nâng cao.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                {/* <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Button
                     as={Link}
                     to="/about"
@@ -251,7 +251,7 @@ const LandingPage = () => {
                   >
                     Tài liệu tham khảo
                   </Button>
-                </div>
+                </div> */}
               </CardContent>
             </Card>
           </ScrollRevealSection>
