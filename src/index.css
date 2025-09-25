@@ -1,0 +1,122 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom styles for the anti-corruption website */
+
+@layer base {
+  html {
+    font-family: "Merriweather", serif;
+  }
+
+  /* Base typography styles */
+  h1 {
+    @apply text-4xl md:text-5xl font-bold tracking-tight leading-tight;
+  }
+
+  h2 {
+    @apply text-3xl md:text-4xl font-bold tracking-tight leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl md:text-3xl font-bold tracking-tight leading-tight;
+  }
+
+  h4 {
+    @apply text-xl md:text-2xl font-bold tracking-tight leading-tight;
+  }
+
+  p {
+    @apply text-base md:text-lg leading-relaxed tracking-normal;
+  }
+
+  /* Adjust button text for better readability with Merriweather */
+  button,
+  .button {
+    @apply tracking-wide font-normal;
+  }
+
+  /* Improve readability for navigation items */
+  nav {
+    @apply tracking-wide;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Line clamp utilities */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dc2626;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b91c1c;
+}
+
+/* Focus styles */
+.focus\:ring-red-500:focus {
+  --tw-ring-color: #ef4444;
+}
+
+/* Animation utilities */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+/* Custom button styles */
+.btn-primary {
+  @apply bg-red-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-red-700 transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-white text-red-600 border-2 border-red-600 px-6 py-3 rounded-lg font-semibold hover:bg-red-50 transition-colors duration-200;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Text selection */
+::selection {
+  background-color: #fecaca;
+  color: #991b1b;
+}
