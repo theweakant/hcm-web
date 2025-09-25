@@ -267,6 +267,16 @@ const LandingPage = () => {
 
       {/* Hồ Chí Minh's View Section */}
 
+      <iframe
+        allowFullScreen
+        allow="clipboard-write"
+        scrolling="no"
+        className="fp-iframe"
+        style={{ border: '1px solid lightgray', width: '100%', height: '400px' }}
+        src="https://heyzine.com/flip-book/db96875239.html"
+        title="Heyzine Flipbook">
+      </iframe>
+
       <section className="py-24 bg-white" style={{ backgroundColor: "tan" }}>
 
         <Container>
